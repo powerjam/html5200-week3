@@ -22,6 +22,14 @@ imageListA[13] = "images/drawing/thumbs/artwork_14.jpg";
 imageListA[14] = "images/drawing/thumbs/artwork_15.jpg";
 imageListA[15] = "images/drawing/thumbs/artwork_16.jpg";
 imageListA[16] = "images/drawing/thumbs/artwork_17.jpg";
+imageListA[17] = "images/drawing/thumbs/artwork_18.jpg";
+imageListA[18] = "images/drawing/thumbs/artwork_19.jpg";
+imageListA[19] = "images/drawing/thumbs/artwork_20.jpg";
+imageListA[20] = "images/drawing/thumbs/artwork_21.jpg";
+imageListA[21] = "images/drawing/thumbs/artwork_22.jpg";
+imageListA[22] = "images/drawing/thumbs/artwork_23.jpg";
+imageListA[23] = "images/drawing/thumbs/artwork_24.jpg";
+imageListA[24] = "images/drawing/thumbs/artwork_25.jpg";
 
 //Oil color art
 var imageListB = new Array();
@@ -44,6 +52,10 @@ imageListC [4] = "images/watercolor/thumbs/artwork_5.jpg";
 imageListC [5] = "images/watercolor/thumbs/artwork_6.jpg";
 imageListC [6] = "images/watercolor/thumbs/artwork_7.jpg";
 imageListC [7] = "images/watercolor/thumbs/artwork_8.jpg";
+imageListC [8] = "images/watercolor/thumbs/artwork_9.jpg";
+imageListC [9] = "images/watercolor/thumbs/artwork_10.jpg";
+
+
 
 //create the buildThumbnail function
 function buildThumbnails()
@@ -57,13 +69,26 @@ function buildThumbnails()
   //first part: counter (we set up 0 to start counting the loop)
   //second part: condition (the loop will keep looping as long as the condition is true)
   //third part: incrementor - adds one to the counter AFTER  the code is executed
-  for(var i=0; i < 4; i++){
+  //for(var i=0; i < 4; i++){
+  for(var i=0; i < imageListA.length; i++){
     //thumbsDivinnerHTML = i;
 //    output += i;//concatenation assignment operator
     output += '<img src="' + imageListA[i] + '" />';
   }
-    thumbsDivinnerHTML = output;
     
+  for(var j=0; j < imageListB.length; j++){
+    output += '<img src="' + imageListB[j] + '" />';
+  }
+   
+  for(var k=0; k < imageListC.length; k++){
+    output += '<img src="' + imageListC[k] + '" />';
+  }
+  
+  
+  thumbsDivinnerHTML = output;
+
+  
+  
   thumbsDiv.innerHTML = output;
   //thumbsDiv.innerHTML = "<p>Hi there</p>";
   /*thumbsDiv.innerHTML = 
@@ -76,8 +101,9 @@ function buildThumbnails()
     ; */
 }
 
-window.onload = function()
-{
+
+
+window.onload = function(){
   buildThumbnails();//use or "fire off" this function
   //or invoke the function
 };
